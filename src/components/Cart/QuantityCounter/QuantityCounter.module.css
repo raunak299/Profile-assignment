@@ -1,0 +1,28 @@
+.quantityCounter {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.quantity {
+  font-size: 1.2rem;
+}
+
+.counterBtn {
+  border: none;
+  padding: none;
+  background: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.1rem 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counterBtn:hover {
+  background: lightblue;
+}

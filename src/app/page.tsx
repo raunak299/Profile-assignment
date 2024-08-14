@@ -1,10 +1,11 @@
+'use client';
 
-import styles from "./page.module.css";
+import { Products } from "@/components";
 
 export default function Home() {
   return (
-      <main className={styles.main}>
-        <h1>hello</h1>
+      <main>
+        <Products/>
       </main>
   );
 }

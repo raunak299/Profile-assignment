@@ -124,7 +124,20 @@ a {
 }
 
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  --accent-color: #e74c3c;
+  --primary-color: #167ff8;
+  --secondary-color: hsl(247 47% 43%);
+  --primary-color-hover: #49c0f4;
+  --secondary-color-hover: hsl(247, 81%, 72%);
+  --primary-background-color: rgba(216, 220, 224, 0.3);
+  --third-color: hsl(247 47% 43%);
+  --accent-color: #378ff4;
+  --primary-text-color: #394e6a;
+  --secondary-text-color: #ffffff;
+  --primary-border: 1px solid rgb(232, 229, 229);
+  --breakpoint-mobile: 576px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 992px;
+}
+
+.layout {
 }

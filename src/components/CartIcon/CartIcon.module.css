@@ -1,0 +1,30 @@
+.cart {
+  position: relative;
+  border-radius: 50%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cart:hover {
+  background: rgb(225, 224, 224);
+}
+
+.cartCount {
+  position: absolute;
+  top: -0.5rem;
+  right: 0;
+  color: var(--secondary-text-color);
+  background: var(--primary-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 50%;
+  font-size: 0.8rem;
+}
+
+.cart > svg {
+  color: var(--primary-text-color);
+  height: 1.5rem;
+  width: 1.5rem;
+}

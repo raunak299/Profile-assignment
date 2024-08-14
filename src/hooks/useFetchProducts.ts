@@ -1,4 +1,3 @@
-import { PRODUCT_FETCH_URL } from "@/constants/url";
 import { Product, RemoteDataState } from "@/types";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -22,8 +21,9 @@ const useFetchProducts = (
 
   const fetchProducts = async () => {
     try {
-      const response: { data: Product[] } = await axios.get(url);
-      setRemoteDataState({ status: "success", data: response.data });
+      const response = await axios.get(url);
+      const products: { data: Product[] } = response.data;
+      setRemoteDataState({ status: "success", data: products.data });
     } catch (err) {
       setRemoteDataState({ status: "error", message: "Something went wrong" });
     }

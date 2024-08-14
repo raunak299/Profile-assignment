@@ -1,0 +1,50 @@
+.productCard {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05),
+    -10px 10px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.productImg {
+  height: 16rem;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  border-radius: 0.75rem;
+}
+
+.cardBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0rem;
+  gap: 0.5rem;
+}
+
+.title {
+  letter-spacing: 0.1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--primary-text-color);
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent-color);
+}
+
+@media (width >= 576px) {
+  .productImg {
+    max-height: 14rem;
+  }
+}
+
+@media (width>= 768px) {
+  .productImg {
+    max-height: 12rem;
+  }
+}

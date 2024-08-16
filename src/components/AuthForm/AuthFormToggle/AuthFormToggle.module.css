@@ -1,0 +1,13 @@
+.authFormToggle {
+  color: var(--primary-text-color);
+}
+
+.authFormToggleBtn {
+  color: var(--accent-color);
+  padding: 0;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding-left: 0.5rem;
+  font-weight: 500;
+}

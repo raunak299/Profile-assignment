@@ -115,6 +115,7 @@ a {
 html,
 body {
   max-width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
@@ -126,11 +127,13 @@ a {
 :root {
   --primary-color: #167ff8;
   --secondary-color: hsl(247 47% 43%);
+  --error-color: rgb(245, 57, 57);
+  --disabled-color: rgb(221, 219, 219);
   --primary-color-hover: #49c0f4;
   --secondary-color-hover: hsl(247, 81%, 72%);
-  --primary-background-color: rgba(216, 220, 224, 0.3);
+  --primary-background-color: rgba(188, 224, 249, 0.3);
   --third-color: hsl(247 47% 43%);
-  --accent-color: #378ff4;
+  --accent-color: #1179f0;
   --primary-text-color: #394e6a;
   --secondary-text-color: #ffffff;
   --primary-border: 1px solid rgb(232, 229, 229);

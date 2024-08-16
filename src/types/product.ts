@@ -13,6 +13,4 @@ export type Product = {
   };
 };
 
-export type ProductContextType = {
-  products: Product[];
-};
+export type ProductWithQuantity = Product & { quantity: number };

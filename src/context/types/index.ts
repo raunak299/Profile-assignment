@@ -1,10 +1,9 @@
-import { Product } from "@/types";
+import { Product, ProductWithQuantity } from "@/types";
 
-
-
-export type ProductWithQuantity = Product & { quantity: number };
-
-export type CartState = ProductWithQuantity[];
+export type CartState = {
+  products: ProductWithQuantity[];
+  totalProductPrice: number;
+};
 
 export type CartAction =
   | { type: "add_product"; payload: { product: Product } }
@@ -12,4 +11,8 @@ export type CartAction =
   | {
       type: "update_product";
       payload: { productId: number; quantity: number };
+    }
+  | {
+      type: "remove_all_products";
+      payload: {};
     };

@@ -1,0 +1,33 @@
+.cartSummary {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  height: fit-content;
+  background: var(--primary-background-color);
+  gap: 0.5rem;
+  border-radius: 1.5rem;
+  max-width: 22rem;
+  color: var(--primary-text-color);
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.orderTotal {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderTotalTitle {
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  text-transform: capitalize;
+  color: var(--primary-text-color);
+  font-weight: 600;
+}
+
+.discountSection {
+  padding-top: 1rem;
+  width: 100%;
+}

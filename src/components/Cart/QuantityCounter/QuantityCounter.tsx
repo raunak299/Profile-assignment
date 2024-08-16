@@ -1,35 +1,12 @@
 import { useEffect, useState } from "react";
 import styles from "./QuantityCounter.module.css";
-import { ProductWithQuantity } from "@/context";
 import useCartContext from "@/context/hooks/useCartContext";
+import { ProductWithQuantity } from "@/types";
+import { useQuantity } from "@/components/hooks";
 
 function QuantityCounter(props: { product: ProductWithQuantity }) {
   const { product } = props;
-  const [currentQuantity, setCurrentQuantity] = useState(product.quantity);
-
-  const { dispatchCartAction } = useCartContext();
-
-  const increaseQuantity = () => {
-    setCurrentQuantity((prev) => prev + 1);
-  };
-
-  const decreaseQuantity = () => {
-    setCurrentQuantity((prev) => Math.max(prev - 1, 0));
-  };
-
-  useEffect(() => {
-    if (currentQuantity === 0) {
-      dispatchCartAction({
-        type: "remove_product",
-        payload: { productId: product.id },
-      });
-    } else {
-      dispatchCartAction({
-        type: "update_product",
-        payload: { productId: product.id, quantity: currentQuantity },
-      });
-    }
-  }, [currentQuantity]);
+  const { increaseQuantity, decreaseQuantity } = useQuantity(product);
 
   return (
     <div className={styles.quantityCounter}>

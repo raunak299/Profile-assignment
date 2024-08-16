@@ -1,8 +1,8 @@
 import Image from "next/image";
 import styles from "./CartProductCard.module.css";
 import QuantityCounter from "../QuantityCounter/QuantityCounter";
-import { ProductWithQuantity } from "@/context";
 import useCartContext from "@/context/hooks/useCartContext";
+import { ProductWithQuantity } from "@/types";
 
 function CartProductCard(props: { product: ProductWithQuantity }) {
   const { product } = props;

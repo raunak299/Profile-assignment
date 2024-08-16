@@ -1,0 +1,18 @@
+.cartSummaryItem {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(223, 220, 220);
+}
+
+.title {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.value {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+}

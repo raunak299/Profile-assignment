@@ -2,9 +2,11 @@
 import { Checkout, ProtectedRoute } from "@/components";
 
 const CheckoutPage: React.FC = () => {
-    return (
-      <ProtectedRoute><Checkout/></ProtectedRoute>
-    );
-  };
-  
-  export default CheckoutPage;
+  return (
+    <ProtectedRoute>
+      <Checkout />
+    </ProtectedRoute>
+  );
+};
+
+export default CheckoutPage;

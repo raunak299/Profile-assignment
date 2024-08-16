@@ -1,11 +1,15 @@
-'use client';
+"use client";
 
-import { Products } from "@/components";
+import { AuthForm, SignoutButton } from "@/components";
+import styles from "./page.module.css";
+import useAuthContext from "@/context/hooks/useAuthContext";
+import { redirect } from "next/navigation";
 
 export default function Home() {
+  
   return (
-      <main>
-        <Products/>
-      </main>
+    <main className={styles.main}>
+      {redirect('/products')}
+    </main>
   );
 }

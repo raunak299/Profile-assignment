@@ -11,3 +11,10 @@ pnpm dev
 # or
 bun dev
 ```
+
+## Approach
+State Management: Using context for state management with AuthContext and CartContext.
+Persistence: Local storage is used for persistence.
+Authentication: Firebase is utilized for authentication.
+Type Safety: TypeScript is employed to ensure type safety.
+

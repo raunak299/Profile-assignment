@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .button-primary {
@@ -33,22 +34,59 @@
 
 .button-small {
   padding: 0.3125rem 0.625rem;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   width: 8rem;
 }
 
 .button-medium {
   padding: 0.5rem 1.25rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   width: 12rem;
+  letter-spacing: 0.08rem;
 }
 
 .button-large {
   padding: 0.625rem 1.5625rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   width: 20rem;
+  letter-spacing: 0.1;
 }
 
 .button-fullWidth {
   width: 100%;
+  letter-spacing: 0.1rem;
+}
+
+.button:disabled {
+  background: var(--disabled-color);
+  color: var(--primary-text-color);
+  pointer-events: none;
+}
+
+.button-loading {
+  background: var(--disabled-color);
+  color: var(--primary-text-color);
+  pointer-events: none;
+}
+
+.loadingSpinner-primary {
+  color: var(--primary-color-hover);
+}
+
+.loadingSpinner-secondary {
+  color: var(--secondary-color-hover);
+}
+
+@media (width <= 786px) {
+  .button-medium {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.8rem;
+    width: 12rem;
+  }
+
+  .button-large {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    width: 20rem;
+  }
 }

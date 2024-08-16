@@ -3,9 +3,9 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0.8rem 4rem;
+  padding: 0.8rem 2rem;
   border: var(--primary-border);
-  background-color: #ffffff8f;
+  /* background-color: var(--primary-background-color); */
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
@@ -22,4 +22,14 @@
   justify-content: center;
   align-items: center;
   border-radius: 0.2rem;
+}
+
+.navigationItem {
+  display: flex;
+}
+
+@media (width >=786px) {
+  .navbar {
+    padding: 0.8rem 4rem;
+  }
 }

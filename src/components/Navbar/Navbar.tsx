@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./Navbar.module.css";
 import { CartIcon } from "../CartIcon";
 import useCartContext from "@/context/hooks/useCartContext";
+import { UserIcon } from "../UserIcon";
 
 function Navbar(): JSX.Element {
   const { products } = useCartContext();
@@ -11,8 +12,11 @@ function Navbar(): JSX.Element {
       <Link href="/">
         <h1 className={styles.logo}>Qkart</h1>
       </Link>
-      <CartIcon count={products.length} />
-    </nav>
+      <section className={styles.navigationItem}>
+        <UserIcon />
+        <CartIcon count={products.length}/>
+      </section>
+    </nav> 
   );
 }
 

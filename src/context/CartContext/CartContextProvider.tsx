@@ -1,57 +1,47 @@
-import { ReactNode, useReducer } from "react";
+import { ReactNode, useEffect, useReducer } from "react";
 import cartContext from "./CartContext";
-import { CartAction, CartState, ProductWithQuantity } from "../types";
-
-
-const cartReducer = (prevProducts: CartState, action: CartAction) => {
-    console.log(action.payload)
-  switch (action.type) {
-    case "add_product": {
-      const { product } = action.payload;
-      let productAlreadyExistInCart = false;
-      const newProducts = prevProducts.map((p) => {
-        if (p.id === product.id) {
-          productAlreadyExistInCart = true;
-          return { ...p, quantity: p.quantity + 1 }; 
-        }
-        return p; 
-      });
-      if (!productAlreadyExistInCart) {
-        newProducts.push({ ...product, quantity: 1 }); 
-      }
-      console.log(newProducts)
-      return newProducts; 
-    }
-
-    case "remove_product": {
-      return prevProducts.filter(
-        (productItem) => productItem.id !== action.payload.productId
-      );
-    }
-
-    case "update_product": {
-        const { productId,quantity } = action.payload;
-        const newProducts = prevProducts.map((p) => {
-          if (p.id === productId) {
-            return { ...p, quantity: quantity  }; 
-          }
-          return p; 
-        });
-        return newProducts; 
-    }
-
-    default:
-      return prevProducts;
-  }
-};
+import { CartState } from "../types";
+import { cartReducer } from "../reducers";
+import { useLocalStorage } from "@/hooks";
+import { LOCAL_STORAGE_ITEM_KEYS } from "@/constants";
+import AuthContextProvider from "../AuthContext/AuthContextProvider";
+import useAuthContext from "../hooks/useAuthContext";
 
 function CartContextProvider({ children }: { children: ReactNode }) {
-  const initialState: ProductWithQuantity[] = [];
+  const { isLoggedIn } = useAuthContext();
+  const defaultInitialCartData = { products: [], totalProductPrice: 0 };
+  const {
+    setLocalStorage: setCartDetails,
+    removeLocalStorage: removeCartDetails,
+    getFromLocalStorage: getCartDetails,
+  } = useLocalStorage<CartState>({
+    key: LOCAL_STORAGE_ITEM_KEYS.CART_PRODUCTS,
+    defaultValue: defaultInitialCartData,
+  });
+
+  const cartDataInLocalStorage = getCartDetails();
+  const initialState: CartState = cartDataInLocalStorage
+    ? cartDataInLocalStorage
+    : defaultInitialCartData;
   const [cartItems, dispatch] = useReducer(cartReducer, initialState);
+
+  useEffect(() => {
+    setCartDetails(cartItems);
+  }, [cartItems, setCartDetails]);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      dispatch({ type: "remove_all_products", payload: {} });
+    }
+  }, [isLoggedIn]);
 
   return (
     <cartContext.Provider
-      value={{ products: cartItems, dispatchCartAction: dispatch }}
+      value={{
+        products: cartItems.products,
+        totalProductPrice: cartItems.totalProductPrice,
+        dispatchCartAction: dispatch,
+      }}
     >
       {children}
     </cartContext.Provider>

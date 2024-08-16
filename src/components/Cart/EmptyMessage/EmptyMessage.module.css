@@ -1,0 +1,11 @@
+.emptyContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: auto;
+}
+
+.emptyMsg {
+  color: var(--primary-color);
+  letter-spacing: 0.2rem;
+}

@@ -1,0 +1,20 @@
+.loaderRoot {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: auto;
+}
+
+.loaderMessage {
+  color: var(--primary-text-color);
+  font-size: 1.2rem;
+  font-weight: 450;
+}
+
+@media (width >= 576px) {
+  .loaderMessage {
+    font-size: 1.5rem;
+  }
+}

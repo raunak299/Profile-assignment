@@ -1,3 +1,24 @@
+.cartBody {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
 .cartProductContainer {
   margin-top: 2rem;
+}
+
+.summarySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (width >=992px) {
+  .cartBody {
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
 }

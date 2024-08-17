@@ -1,13 +1,12 @@
 import { Product } from "@/types";
 import styles from "./ProductCard.module.css";
-import Image from "next/image";
-import { Button } from "@/ui";
+import { SuaveImage } from "@/ui";
 import useCartContext from "@/context/hooks/useCartContext";
 import AddToCartButton from "@/components/Cart/AddToCartButton/AddToCartButton";
 
 export default function ProductCard(props: { product: Product }): JSX.Element {
   const { product } = props;
-  const { products, dispatchCartAction } = useCartContext();
+  const { dispatchCartAction } = useCartContext();
 
   const addProductToCartHandler = (product: Product) => {
     dispatchCartAction({
@@ -20,15 +19,14 @@ export default function ProductCard(props: { product: Product }): JSX.Element {
 
   return (
     <div className={styles.productCard}>
-      <Image
+      <SuaveImage
         src={product.attributes.image}
         alt={`product-image-${product.id}`}
-        placeholder="blur"
-        blurDataURL="/assets/blur.jpg"
         width="200"
         height="200"
         layout="responsive"
         className={styles.productImg}
+        shimmerEffect={true}
       />
       <div className={styles.cardBody}>
         <h2 className={styles.title}>{product.attributes.title}</h2>

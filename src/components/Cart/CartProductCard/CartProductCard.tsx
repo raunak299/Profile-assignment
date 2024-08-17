@@ -1,8 +1,8 @@
-import Image from "next/image";
 import styles from "./CartProductCard.module.css";
 import QuantityCounter from "../QuantityCounter/QuantityCounter";
 import useCartContext from "@/context/hooks/useCartContext";
 import { ProductWithQuantity } from "@/types";
+import { SuaveImage } from "@/ui";
 
 function CartProductCard(props: { product: ProductWithQuantity }) {
   const { product } = props;
@@ -18,14 +18,13 @@ function CartProductCard(props: { product: ProductWithQuantity }) {
   return (
     <div className={styles.cartProductCard}>
       <div className={styles.productImgContainer}>
-        <Image
+        <SuaveImage
           src={product.attributes.image}
           alt={`product-image-${product.id}`}
-          placeholder="blur"
-          blurDataURL="/assets/blur.jpg"
           width="200"
           height="200"
           className={styles.productImg}
+          shimmerEffect={true}
         />
       </div>
       <h2 className={styles.title}>{product.attributes.title}</h2>

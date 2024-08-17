@@ -1,0 +1,25 @@
+/* Define the shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -100vw 0;
+  }
+  100% {
+    background-position: 100vw 0;
+  }
+}
+
+/* Styles for the shimmer effect and gradient background */
+.shimmerEffect {
+  background: linear-gradient(
+    90deg,
+    rgba(190, 190, 190, 0.5) 0%,
+    rgba(210, 210, 210, 0.5) 50%,
+    rgba(230, 230, 230, 0.5) 100%
+  );
+  background-size: 100vw 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.image {
+  transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
